@@ -57,9 +57,10 @@
       "enabled": false
     },
     {
-      // Auto-bump chart version when Renovate updates chart values files. These updates
-      // are usually container tag updates.
-      "matchFileNames": ["charts/*/Chart.yaml", "charts/*/values.yaml"],
+      "matchFileNames": [
+        "charts/agent-control-deployment/values.yaml",
+        "charts/agent-control-bootstrap/values.yaml"
+      ],
       "bumpVersions": [
         {
           "filePatterns": ["{{packageFileDir}}/Chart.yaml"],
