@@ -3,6 +3,12 @@
     "github>newrelic/k8s-agents-automation:renovate-base.json5"
   ],
   "bumpVersion": "patch",
+  "logLevelRemap": [
+    {
+      "matchMessage": "/bumpVersions/",
+      "newLogLevel": "debug"
+    }
+  ],
   "packageRules": [
     // This is a shared repository where it is not clear that generic rules apply
     // Making rules per folders or properties runs the risk that future 
@@ -63,6 +69,7 @@
       ],
       "bumpVersions": [
         {
+          "name": "bump-chart-version",
           "filePatterns": ["{{packageFileDir}}/Chart.yaml"],
           "matchStrings": ["version:\\s*[\"']?(?<version>[^\"'\\s]+)[\"']?"],
           "bumpType": "patch"
