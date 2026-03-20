@@ -61,16 +61,16 @@
       ],
       "enabled": false
     },
-    {
-      "matchFileNames": ["charts/**"],
-      "bumpVersions": [
-        {
-          "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
-          "matchStrings": ["version:\\s(?<version>[^\\s]+)"],
-          "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
-        }
-      ]
-    },
+    // {
+    //   "matchFileNames": ["charts/**"],
+    //   "bumpVersions": [
+    //     {
+    //       "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
+    //       "matchStrings": ["version:\\s(?<version>[^\\s]+)"],
+    //       "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
+    //     }
+    //   ]
+    // },
     {
       "matchFileNames": [
         "charts/agent-control-deployment/**",
