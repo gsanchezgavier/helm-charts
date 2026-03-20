@@ -61,13 +61,13 @@
       ],
       "enabled": false
     },
-    {
-      "matchFileNames": [
-        "charts/agent-control-deployment/**",
-        "charts/agent-control-bootstrap/**"
-      ],
-      "groupName": "agent-control charts"
-    },
+    // {
+    //   "matchFileNames": [
+    //     "charts/agent-control-deployment/**",
+    //     "charts/agent-control-bootstrap/**"
+    //   ],
+    //   "groupName": "agent-control charts"
+    // },
     {
       "matchFileNames": ["charts/**"],
       "bumpVersions": [
