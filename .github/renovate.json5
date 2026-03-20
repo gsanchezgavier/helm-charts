@@ -62,16 +62,12 @@
       "enabled": false
     },
     {
-      "matchFileNames": [
-        "charts/agent-control-deployment/values.yaml",
-        "charts/agent-control-bootstrap/values.yaml"
-      ],
+      "matchFileNames": ["charts/**"],
       "bumpVersions": [
         {
-          "name": "bump-chart-version",
-          "filePatterns": ["{{packageFileDir}}/Chart.yaml"],
-          "matchStrings": ["version:\\s*[\"']?(?<version>[^\"'\\s]+)[\"']?"],
-          "bumpType": "patch"
+          "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
+          "matchStrings": ["version:\\s(?<version>[^\\s]+)"],
+          "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
         }
       ]
     },
