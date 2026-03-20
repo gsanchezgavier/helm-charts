@@ -4,7 +4,7 @@ description: Bootstraps New Relic' Agent Control
 
 type: application
 
-version: 1.6.0
+version: 1.6.1
 
 # agent-control-deployment chart default version.
 appVersion: 1.6.0
