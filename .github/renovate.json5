@@ -88,6 +88,14 @@
       "matchFileNames": ["charts/agent-control-bootstrap/**"],
       "groupName": "agent-control-bootstrap dependencies",
       "groupSlug": "agent-control-bootstrap-dependencies"
+    },
+    {
+      // Explicitly group regex-manager deps by name so they always land in the
+      // same PR as the other bootstrap updates, regardless of how Renovate
+      // attributes their packageFile.
+      "matchDepNames": ["agent-control-deployment", "agent-control-cd"],
+      "groupName": "agent-control-bootstrap dependencies",
+      "groupSlug": "agent-control-bootstrap-dependencies"
     }
   ]
 }
