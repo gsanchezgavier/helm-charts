@@ -3,6 +3,17 @@
     "github>newrelic/k8s-agents-automation:renovate-base.json5"
   ],
   "bumpVersion": "patch",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["charts/agent-control-bootstrap/Chart.yaml"],
+      "datasourceTemplate": "helm",
+      "registryUrlTemplate": "https://helm-charts.newrelic.com",
+      "matchStrings": [
+        "# renovate: chartName=(?<depName>\\S+)\\n[^:]+: (?<currentValue>\\S+)"
+      ]
+    }
+  ],
   "packageRules": [
     // This is a shared repository where it is not clear that generic rules apply
     // Making rules per folders or properties runs the risk that future 
@@ -69,11 +80,12 @@
       ]
     },
     {
-      "matchFileNames": [
-        "charts/agent-control-deployment/**",
-        "charts/agent-control-bootstrap/**"
-      ],
-      "groupName": "agent-control release"
+      "matchFileNames": ["charts/agent-control-deployment/**"],
+      "groupName": "agent-control-deployment dependencies"
+    },
+    {
+      "matchFileNames": ["charts/agent-control-bootstrap/**"],
+      "groupName": "agent-control-bootstrap dependencies"
     }
   ]
 }
